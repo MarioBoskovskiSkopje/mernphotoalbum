@@ -1,9 +1,5 @@
 import { GET_IMAGES, DELETE_IMAGE } from "../actions/types";
 
-// const initalState = {
-//   images: []
-// };
-
 export default function(state = [], action) {
   switch (action.type) {
     case GET_IMAGES: {

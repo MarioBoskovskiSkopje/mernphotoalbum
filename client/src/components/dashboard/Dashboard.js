@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { getImages, deleteImage } from "../../actions/imageActions";
-import { getCurrentProfile } from "../../actions/profileActions";
+import { getCurrentProfile } from "../../actions/loginRegisterActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import DeleteItem from "../deleteItem/DeleteItem";
 import Spinner from "../spinner/Spinner";
@@ -17,7 +16,7 @@ class Dashboard extends Component {
 
   componentDidMount() {
     this.props.getImages();
-    this.props.getCurrentProfile();
+    console.log(this.props.user);
   }
   renderImages() {
     return this.props.images.map((img, index) => {
@@ -37,14 +36,11 @@ class Dashboard extends Component {
 
   render() {
     const { images } = this.props;
+    const { name } = this.props.user;
     return images !== undefined && images.length > 0 ? (
       <div>
-        <Navbar />
-        <main className="grid">
-          {this.renderImages()}
-
-          <Link to="/upload">Upload a image</Link>
-        </main>
+        <Navbar name={name} />
+        <main className="grid">{this.renderImages()}</main>
       </div>
     ) : (
       <Spinner />
@@ -53,17 +49,16 @@ class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-  getImages: PropTypes.func.isRequired,
-  getCurrentProfile: PropTypes.func.isRequired
-  //profile: PropTypes.object.isRequired
+  getImages: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   images: state.imageReducer,
-  profile: state.profile
+  profile: state.profile,
+  user: state.loginRegister.user
 });
 
 export default connect(
   mapStateToProps,
-  { getImages, getCurrentProfile, deleteImage }
+  { getImages, deleteImage }
 )(Dashboard);

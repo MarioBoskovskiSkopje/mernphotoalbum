@@ -88,17 +88,4 @@ router.post("/login", (req, res) => {
   });
 });
 
-// // route GET api/profile/profiles/current
-// router.get(
-//   "/current",
-
-//   // passport.authenticate("jwt", { session: false }),
-//   (req, res) => {
-//     console.log("in request"),
-//       Profile.findOne({ user: req.user.id }).then(profile => {
-//         return res.json({ profile });
-//       });
-//   }
-// );
-
 module.exports = router;

@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { getCurrentProfile } from "../../actions/profileActions";
 
 class UploadImage extends React.Component {
   constructor(props) {
@@ -11,10 +10,6 @@ class UploadImage extends React.Component {
     };
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.getCurrentProfile();
   }
 
   onFormSubmit(e) {
@@ -41,7 +36,6 @@ class UploadImage extends React.Component {
   }
 
   render() {
-    console.log("PROPS", this.state);
     return (
       <div>
         <form onSubmit={this.onFormSubmit}>
@@ -56,5 +50,5 @@ class UploadImage extends React.Component {
 
 export default connect(
   null,
-  { getCurrentProfile }
+  null
 )(UploadImage);

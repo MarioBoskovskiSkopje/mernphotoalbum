@@ -1,4 +1,4 @@
-import { CLEAR_CURRENT_PROFILE,GET_CURRENT_PROFILE } from "../actions/types";
+import { CLEAR_CURRENT_PROFILE, GET_CURRENT_PROFILE } from "../actions/types";
 
 const initialState = {
   profile: null,
@@ -13,14 +13,7 @@ export default function(state = initialState, action) {
         ...state,
         profile: null
       };
-    default:
-      return state;
-  }
-}
-
-export default function(state = initialState, action) {
-  switch (action.type) {
-    case GET_CURRENT_PROFILE :
+    case GET_CURRENT_PROFILE:
       return {
         ...state,
         profile: action.payload
