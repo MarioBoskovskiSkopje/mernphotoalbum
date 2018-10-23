@@ -42,14 +42,16 @@ class Register extends Component {
     const errors = this.state.errors;
     const error = errors.toString();
     return (
-      <div className="register">
+      <div className="register" style={{ color: "white" }}>
         <div className="container">
           <div className="row">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
                 <p className="lead text-center">
                   Register your Profile or{" "}
-                  <Link to="/login">Login to your account</Link>
+                  <Link to="/login" style={{ textDecoration: "none" }}>
+                    Login to your account
+                  </Link>
                 </p>
                 <p style={{ color: "red" }}>{error.toUpperCase()}</p>
                 <label htmlFor="name">Name:</label>

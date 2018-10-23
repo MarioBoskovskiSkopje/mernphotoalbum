@@ -15,3 +15,27 @@ body {
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
   max-width: 100%;
 }
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  background-color: skyblue;
+  justify-content: space-between;
+}
+
+.navBar a {
+  text-decoration: none;
+}
+
+.navBar a:hover {
+  color: black;
+}
+
+.navBarImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}

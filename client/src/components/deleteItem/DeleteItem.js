@@ -12,7 +12,12 @@ class DeleteItem extends Component {
 
     return (
       <div>
-        <button onClick={this.deleteClick.bind(this, id)}>x</button>
+        <button
+          onClick={this.deleteClick.bind(this, id)}
+          style={{ backgroundColor: "black", color: "white", border: "none" }}
+        >
+          x
+        </button>
       </div>
     );
   }

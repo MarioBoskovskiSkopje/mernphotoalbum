@@ -49,7 +49,7 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div>
+      <div style={{ color: "white" }}>
         <div>
           <div className="loginmodal-container">
             <h1>Login to Your Account</h1>
@@ -81,10 +81,25 @@ class Login extends Component {
                 type="submit"
                 name="login"
                 className="login loginmodal-submit"
+                style={{
+                  marginBottom: "10px",
+                  backgroundColor: "#4CAF50",
+                  border: "none",
+                  color: "white",
+                  padding: "15px 32px",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  fontSize: "16px",
+                  margin: "4px 2px",
+                  cursor: "pointer"
+                }}
               />
             </form>
           </div>
-          <Link to="/register">Register your account</Link>
+          <Link to="/register" style={{ textDecoration: "none" }}>
+            Register your account
+          </Link>
         </div>
       </div>
     );
@@ -93,7 +108,6 @@ class Login extends Component {
 Login.propTypes = {
   loginProfile: PropTypes.func.isRequired,
   loginRegister: PropTypes.object.isRequired
-  //errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({

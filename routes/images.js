@@ -10,12 +10,8 @@ router.get("/images", (req, res) => {
     .then(images => {
       for (let i = 0; i < images.length; i++) {
         const element = images[i].imgPath;
-        //console.log(element);
       }
       res.send({ images });
-      // let img = fs.readFileSync(originalFile);
-      // res.writeHead(200, { "Content-Type": "image/jpg" });
-      // res.end(img, "binary");
     })
     .catch(err =>
       res.status(404).json({
@@ -33,7 +29,6 @@ router.get("/images/:id", (req, res) => {
 });
 // route /api/images/:id
 router.delete("/images/:id", (req, res) => {
-  //console.log(req.params);
   Image.findById(req.params.id).then(image => {
     image
       .remove()

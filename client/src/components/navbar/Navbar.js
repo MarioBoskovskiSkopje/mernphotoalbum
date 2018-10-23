@@ -28,31 +28,46 @@ class Navbar extends Component {
     ];
     let randomNum = Math.floor(Math.random() * arrImg.length);
     return (
-      <div>
-        <h4>{this.props.name}</h4>
-        <img
-          src={arrImg[randomNum]}
-          style={{ height: "150px", width: "180px", borderRadius: "50%" }}
-        />
+      <div className="navBar">
+        <h4
+          style={{
+            paddingRight: "20px",
+            fontSize: "3.5rem",
+            fontStyle: "oblique"
+          }}
+        >
+          {this.props.name}
+        </h4>
+        <img src={arrImg[randomNum]} className="navBarImg" />
       </div>
     );
   }
 
   render() {
     const logoutLink = (
-      <div
-        style={{
-          backgroundColor: "#ecf0f1",
-          textAlign: "center",
-          marginBottom: "10px",
-          fontSize: "20px"
-        }}
-      >
+      <div className="navBar">
         {this.randomAvatar()}
-        <Link to="/upload" style={{ paddingRight: "50px" }}>
+        <Link
+          to="/upload"
+          style={{
+            paddingRight: "50px",
+            paddingRight: "20px",
+            fontSize: "1.5rem",
+            fontStyle: "oblique"
+          }}
+        >
           Upload a image
         </Link>
-        <a href="" onClick={this.onLogoutClick.bind(this)}>
+        <a
+          href=""
+          onClick={this.onLogoutClick.bind(this)}
+          style={{
+            paddingRight: "10px",
+            paddingRight: "20px",
+            fontSize: "1.5rem",
+            fontStyle: "oblique"
+          }}
+        >
           Logout
         </a>
       </div>

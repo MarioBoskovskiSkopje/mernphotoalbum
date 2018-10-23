@@ -4,8 +4,7 @@ import setAuthToken from "../utils/setAuthToken";
 import {
   GET_ERRORS,
   SET_CURRENT_USER,
-  CLEAR_CURRENT_PROFILE,
-  GET_CURRENT_PROFILE
+  CLEAR_CURRENT_PROFILE
 } from "../actions/types";
 
 export const registerProfile = (profileData, history) => dispatch => {

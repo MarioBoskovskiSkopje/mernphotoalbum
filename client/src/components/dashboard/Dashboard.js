@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { getImages, deleteImage } from "../../actions/imageActions";
-import { getCurrentProfile } from "../../actions/loginRegisterActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Navbar from "../../components/navbar/Navbar";
@@ -16,7 +15,6 @@ class Dashboard extends Component {
 
   componentDidMount() {
     this.props.getImages();
-    console.log(this.props.user);
   }
   renderImages() {
     return this.props.images.map((img, index) => {
